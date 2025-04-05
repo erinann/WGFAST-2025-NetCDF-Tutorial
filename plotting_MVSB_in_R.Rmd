@@ -1,0 +1,68 @@
+---
+title: "Plotting MVBS in R"
+author: "Erin LaBrecque"
+date: '2025-04-05'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+`tidync` was developed and maintained by [ROpenSci](https://github.com/ropensci/tidync/tree/main)
+
+# Install the package... 
+
+from CRAN:    
+```{r}
+#install.packages("tidync")
+```
+
+or the developmental install from GitHub:  
+```{r}
+# install.packages("remotes")
+#remotes::install_github("ropensci/tidync", dependencies = TRUE)
+```
+
+# Attach packages  
+
+The warnings have been muted with `message = FALSE`
+```{r message=FALSE}
+library(tidync)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+```
+
+
+# Loading the data
+
+The .nc file is in the data folder. First set a path to the data folder using the `here` package, then load the file using `tidync`.
+
+We are only going to use one function from the `here` package, so we are not going to attach it to session like we did by calling the other packages with `library()`. By using the package name and `::` we can call a function from the package. We are using `here()` instead of `setwd()` because `here` enables easy file referencing by using the your top-level directory (folder) to build file paths.  
+
+
+```{r}
+# path to data folder
+dta <- here::here("data")
+
+# load data
+mvbs <- tidync(paste0(dta, "/test_MVBS.nc"))
+
+# show data
+mvbs
+```
+
+There are three dimensions in the file. Use `hyper_dims` to inspect the dimensions in more detail.
+
+```{r}
+hyper_dims(mvbs)
+```
+
+<br>
+
+
+```{r}
+hyper_vars(mvbs)
+```
+
