@@ -9,6 +9,8 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+We will use `tidync` to read in and plot netCDF data exported from [Echopype](https://github.com/OSOceanAcoustics/echopype).
+
 `tidync` was developed and maintained by [ROpenSci](https://github.com/ropensci/tidync/tree/main)
 
 # Install... 
@@ -43,7 +45,7 @@ The .nc file is in the data folder. First set a path to the data folder using th
 dta <- here::here("data")
 ```
 
-We are only going to use one function from the `here` package, so we are not going to attach it to session like we did by calling the other packages with `library()`. By using the package name and `::` we can call a function from the package (assuming it is in your library folder). We are using `here()` instead of `setwd()` because `here()` enables easy file referencing by using the your top-level directory (folder) to build file paths. Use `paste0()` to concatenate the file path and file name.
+We are only going to use one function from the `here` package, so we are not going to attach it to our session like we did by calling the other packages with `library()`. By using the package name and `::` we can call a function from the package (assuming it is in your library folder). We are using `here()` instead of `setwd()` because `here()` enables easy file referencing by using the your top-level directory (folder) to build file paths. Use `paste0()` to concatenate the file path and file name.
 
 paste0(dta, "/test_MVBS.nc") -> "path to your folder/data/test_MVBS.nc"
 

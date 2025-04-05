@@ -3,6 +3,9 @@ Plotting MVBS in R
 Erin LaBrecque
 2025-04-05
 
+We will use `tidync` to read in and plot netCDF data exported from
+[Echopype](https://github.com/OSOceanAcoustics/echopype).
+
 `tidync` was developed and maintained by
 [ROpenSci](https://github.com/ropensci/tidync/tree/main)
 
@@ -41,7 +44,7 @@ dta <- here::here("data")
 ```
 
 We are only going to use one function from the `here` package, so we are
-not going to attach it to session like we did by calling the other
+not going to attach it to our session like we did by calling the other
 packages with `library()`. By using the package name and `::` we can
 call a function from the package (assuming it is in your library
 folder). We are using `here()` instead of `setwd()` because `here()`
