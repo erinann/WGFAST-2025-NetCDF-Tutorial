@@ -1,2 +1,4 @@
 # WGFAST-2025-NetCDF-Tutorial
-A short guid to plot netCDF data for active acoustics in R
+A short guide to plot netCDF data for active acoustics in R
+
+Click on `plotting_MVBS.md` to see the markdown within your browser.
